@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đặng Xuân Toàn</title>
+    <title>Đặng Xuân Toàn - App</title>
     <style>
       * {
         margin: 0;
@@ -13,7 +13,8 @@
 
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background-color: #0f172a; /* Nền xanh đen Dark Mode */
+        color: #f8fafc;
         min-height: 100vh;
         display: flex;
         justify-content: center;
@@ -21,42 +22,68 @@
       }
 
       .container {
-        background: white;
-        padding: 60px 40px;
-        border-radius: 10px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        background: #1e293b; /* Nền xám đen cho thẻ card */
+        padding: 50px 40px;
+        border-radius: 16px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
         text-align: center;
+        border: 1px solid #334155;
+        max-width: 450px;
+        width: 100%;
       }
 
       h1 {
-        color: #333;
-        font-size: 2.5rem;
-        margin-bottom: 20px;
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+        color: #38bdf8; /* Xanh dương nhạt nổi bật */
         font-weight: 700;
       }
 
       .welcome-text {
-        color: #666;
-        font-size: 1.1rem;
+        color: #94a3b8; /* Chữ màu xám nhạt */
+        font-size: 1rem;
         margin-bottom: 30px;
       }
 
       .name-display {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
         color: white;
-        padding: 30px;
-        border-radius: 8px;
-        font-size: 2rem;
+        padding: 20px;
+        border-radius: 12px;
+        font-size: 1.8rem;
         font-weight: bold;
         letter-spacing: 1px;
+        box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+
+      /* Hiệu ứng nảy lên khi đưa chuột vào tên */
+      .name-display:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 20px -3px rgba(14, 165, 233, 0.6);
+      }
+
+      .badge {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 6px 14px;
+        background: #334155;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: #cbd5e1;
+        font-weight: 500;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Xin chào</h1>
-      <p class="welcome-text">Đây là ứng dụng của</p>
-      <div class="name-display" th:text="${name}"></div>
+      <h1>Xin chào 👋</h1>
+      <p class="welcome-text">Chào mừng bạn đến với ứng dụng của</p>
+      
+      <div class="name-display" th:text="${name}">Đặng Xuân Toàn</div>
+      
+      <div class="badge">🚀 CI/CD Automated</div>
     </div>
   </body>
 </html>
